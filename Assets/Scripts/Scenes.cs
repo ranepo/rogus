@@ -7,6 +7,10 @@ public class Scenes : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject DeathMenuUI;
+    public GameObject MainMenu;
+    public GameObject SettingsMenu;
+    public GameObject PauseMenu;
+
     void Start()
     {
         //PlayerPrefs.SetInt("Level", 1);
@@ -29,7 +33,7 @@ public class Scenes : MonoBehaviour
     }
     public void PlayGame()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("rogus");
     }
     public void QuitGame()
     {
@@ -42,5 +46,15 @@ public class Scenes : MonoBehaviour
     public void RunTutorial()
     {
         SceneManager.LoadScene("Tutorial");
+    }
+    public void Settingmenu()
+    {
+        SettingsMenu.SetActive(true);
+        MainMenu.SetActive(false);
+    }
+    public void settingstomain()
+    {
+        SettingsMenu.SetActive(false);
+        MainMenu.SetActive(true);
     }
 }

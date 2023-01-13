@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/Scenes.cs.meta
 guid: 387e3c023cce2d24d80b75d7b9d3cf74
+========
+guid: dd24240e1e15c8349b38967e750e4021
+>>>>>>>> test:Assets/Scripts/CameraFollow.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
