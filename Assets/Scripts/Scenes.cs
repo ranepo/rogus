@@ -19,6 +19,10 @@ public class Scenes : MonoBehaviour
         //SceneManager.LoadScene(PlayerPrefs.GetInt("Level", 1));
  
     }
+    void Update()
+    {
+        pauseMenu();
+    }
 
     public void LoadNewScene()
     {
@@ -56,5 +60,23 @@ public class Scenes : MonoBehaviour
     {
         SettingsMenu.SetActive(false);
         MainMenu.SetActive(true);
+    }
+    public void pausetomain()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
+
+    public void pauseMenu()
+    {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            PauseMenu.SetActive(true);
+        }
+    }
+
+    public void resume()
+    {
+        Debug.Log("hell");
+        PauseMenu.SetActive(false);
     }
 }
