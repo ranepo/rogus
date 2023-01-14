@@ -10,6 +10,7 @@ public class Scenes : MonoBehaviour
     public GameObject MainMenu;
     public GameObject SettingsMenu;
     public GameObject PauseMenu;
+    public GameObject GameUI;
     public static bool IsPaused = false;
 
     void Start()
@@ -88,6 +89,7 @@ public class Scenes : MonoBehaviour
 
     public void Resume()
     {
+        GameUI.SetActive(true);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1f;
@@ -96,6 +98,7 @@ public class Scenes : MonoBehaviour
     }
     public void Pause()
     {
+        GameUI.SetActive(false);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         if (!DeathMenu.activeSelf)
@@ -108,9 +111,11 @@ public class Scenes : MonoBehaviour
     }
     public void death()
     {
+        GameUI.SetActive(false);
         DeathMenu.SetActive(true);
         Time.timeScale = 0f;
         Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
 }
