@@ -14,6 +14,7 @@ public class Scenes : MonoBehaviour
 
     void Start()
     {
+        AudioListener.volume = 0;
         Cursor.lockState = CursorLockMode.None;
         IsPaused = false;
         Time.timeScale = 1f;
@@ -48,6 +49,7 @@ public class Scenes : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         DeathMenu.SetActive(false);
+        Time.timeScale = 1f;
     }
     public void PlayGame()
     {
@@ -107,6 +109,8 @@ public class Scenes : MonoBehaviour
     public void death()
     {
         DeathMenu.SetActive(true);
+        Time.timeScale = 0f;
+        Cursor.visible = true;
     }
 
 }

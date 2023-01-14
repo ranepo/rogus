@@ -9,7 +9,7 @@ public class volumeslider : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        slider.value = 0.0f;
+        slider.value = 0;
         slider.onValueChanged.AddListener((v) => { AudioListener.volume = v; Debug.Log(v); });
     }
 

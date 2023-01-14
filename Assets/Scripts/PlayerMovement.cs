@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     public float groundDistance = 0.4f;
 
     public Transform orientation;
+    public GameObject SceneManager;
 
     float horizontalInput;
     float verticalInput;
@@ -55,6 +56,10 @@ public class PlayerMovement : MonoBehaviour
             rb.drag = groundDrag;
         else
             rb.drag = 0;
+        if(transform.position.y < -10)
+        {
+            SceneManager.GetComponent<Scenes>().death();
+        }
     }
 
     private void FixedUpdate()
