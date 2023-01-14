@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/rogus.unity
-    guid: 5eec9a5683ee7c14faf83be355389484
-  - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/rogus.unity
+    guid: 5eec9a5683ee7c14faf83be355389484
   m_configObjects: {}

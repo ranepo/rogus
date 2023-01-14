@@ -9,6 +9,7 @@ public class sensitivityslider : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        slider.value = 0.5f;
         slider.onValueChanged.AddListener((v) => { GameObject.FindObjectOfType<PlayerCam>().sensitivity = 1600*v; Debug.Log(1600*v); });
     }
 

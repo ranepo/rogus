@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Scenes : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject DeathMenuUI;
+    public GameObject DeathMenu;
     public GameObject MainMenu;
     public GameObject SettingsMenu;
     public GameObject PauseMenu;
@@ -14,6 +14,7 @@ public class Scenes : MonoBehaviour
 
     void Start()
     {
+        Cursor.lockState = CursorLockMode.None;
         IsPaused = false;
         Time.timeScale = 1f;
         //PlayerPrefs.SetInt("Level", 1);
@@ -28,7 +29,7 @@ public class Scenes : MonoBehaviour
         {
             if (IsPaused == true)
             {
-                //Resume();
+                Resume();
             }
             else
             {
@@ -46,7 +47,7 @@ public class Scenes : MonoBehaviour
     public void GameOver()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        DeathMenuUI.SetActive(false);
+        DeathMenu.SetActive(false);
     }
     public void PlayGame()
     {
@@ -66,32 +67,36 @@ public class Scenes : MonoBehaviour
     }
     public void Settingmenu()
     {
+        Cursor.visible = true;
         SettingsMenu.SetActive(true);
         MainMenu.SetActive(false);
         PauseMenu.SetActive(false);
     }
     public void settingstomain()
     {
+        Cursor.visible = true;
         SettingsMenu.SetActive(false);
         MainMenu.SetActive(true);
     }
     public void pausetomain()
     {
+        Cursor.visible = true;
         SceneManager.LoadScene("Main Menu");
     }
 
     public void Resume()
     {
+        Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        Debug.Log("hell");
         Time.timeScale = 1f;
         PauseMenu.SetActive(false);
         IsPaused = false;
     }
     public void Pause()
     {
+        Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
-        if (!DeathMenuUI.activeSelf)
+        if (!DeathMenu.activeSelf)
         {
             SettingsMenu.SetActive(false);
             PauseMenu.SetActive(true);
@@ -99,4 +104,9 @@ public class Scenes : MonoBehaviour
             IsPaused = true;
         }
     }
+    public void death()
+    {
+        DeathMenu.SetActive(true);
+    }
+
 }
