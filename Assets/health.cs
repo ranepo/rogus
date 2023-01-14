@@ -25,7 +25,6 @@ public class health : MonoBehaviour
     void takeDamage(float damage)
     {
         currentHealth -= damage;
-        Debug.Log(Bar.GetComponent<healthbar>());
         Bar.GetComponent<healthbar>().SetHealth(currentHealth);
     }
     void Update()

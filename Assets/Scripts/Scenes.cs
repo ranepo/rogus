@@ -89,12 +89,16 @@ public class Scenes : MonoBehaviour
 
     public void Resume()
     {
-        GameUI.SetActive(true);
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        Time.timeScale = 1f;
-        PauseMenu.SetActive(false);
-        IsPaused = false;
+        if(!SettingsMenu.activeSelf)
+        {
+            GameUI.SetActive(true);
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            Time.timeScale = 1f;
+            PauseMenu.SetActive(false);
+            IsPaused = false;
+        }
+ 
     }
     public void Pause()
     {
