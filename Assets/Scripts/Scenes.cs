@@ -10,18 +10,31 @@ public class Scenes : MonoBehaviour
     public GameObject MainMenu;
     public GameObject SettingsMenu;
     public GameObject PauseMenu;
+    public static bool IsPaused = false;
 
     void Start()
     {
+        IsPaused = false;
+        Time.timeScale = 1f;
         //PlayerPrefs.SetInt("Level", 1);
         //Debug.Log("moi");
         //Debug.Log(PlayerPrefs.GetInt("Level"));
         //SceneManager.LoadScene(PlayerPrefs.GetInt("Level", 1));
- 
+
     }
     void Update()
     {
-        pauseMenu();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (IsPaused == true)
+            {
+                //Resume();
+            }
+            else
+            {
+                Pause();
+            }
+        }
     }
 
     public void LoadNewScene()
@@ -55,6 +68,7 @@ public class Scenes : MonoBehaviour
     {
         SettingsMenu.SetActive(true);
         MainMenu.SetActive(false);
+        PauseMenu.SetActive(false);
     }
     public void settingstomain()
     {
@@ -66,17 +80,23 @@ public class Scenes : MonoBehaviour
         SceneManager.LoadScene("Main Menu");
     }
 
-    public void pauseMenu()
+    public void Resume()
     {
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            PauseMenu.SetActive(true);
-        }
-    }
-
-    public void resume()
-    {
+        Cursor.lockState = CursorLockMode.Locked;
         Debug.Log("hell");
+        Time.timeScale = 1f;
         PauseMenu.SetActive(false);
+        IsPaused = false;
+    }
+    public void Pause()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        if (!DeathMenuUI.activeSelf)
+        {
+            SettingsMenu.SetActive(false);
+            PauseMenu.SetActive(true);
+            Time.timeScale = 0f;
+            IsPaused = true;
+        }
     }
 }
