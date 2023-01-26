@@ -13,7 +13,7 @@ public class time : MonoBehaviour
 
     void Update()
     {
-        currentTime -= Time.deltaTime;
+        currentTime += Time.deltaTime;
         if (currentTime>=0)
         {
             clock.text = Mathf.Round(currentTime).ToString();
