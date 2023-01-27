@@ -29,7 +29,7 @@ public class health : MonoBehaviour
     }
     void Update()
     {
-        if (currentHealth == 0)
+        if (currentHealth <= 0)
         {
             SceneManager.GetComponent<Scenes>().death();
         } 
