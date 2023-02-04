@@ -1,30 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class enemyAI : MonoBehaviour
 {
+    public GameObject Player;
     public Transform player;
-    public Material material0;
     public Rigidbody rb;
-    public Material material1;
-    public float speed;
     public GameObject self;
-    // Start is called before the first frame update
+    public NavMeshAgent agent;
+    public float cooldown = 1f;
+    float activecooldown;
+
     void Start()
     {
-        GetComponent<MeshRenderer>().material = material0;
+        //player = GameObject.Find("paketti/player");
+        //Debug.Log(player);
+        activecooldown = cooldown;
+        agent.isStopped = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        rb.AddForce(speed*(player.position - transform.position));
-        if(transform.position.y<-10)
+        Debug.Log(activecooldown);
+        activecooldown -= Time.deltaTime;
+        agent.SetDestination(player.position);
+        if (activecooldown <= 0f)
         {
-            Debug.Log("hllo");
-            Destroy(self);
+            agent.isStopped = false;
+            if (Vector3.Distance(transform.position, player.position)<2f)
+            {
+                attack();
+                agent.isStopped = true;
+                activecooldown = cooldown;
+            }
         }
+    }
+    public void attack()
+    {
+        Player.GetComponent<health>().takeDamage(10f);
     }
 
 }

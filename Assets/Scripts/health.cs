@@ -15,14 +15,14 @@ public class health : MonoBehaviour
         currentHealth = maxHealth;
         Bar.GetComponent<healthbar>().SetMaxHealth(maxHealth);
     }
-    void OnCollisionEnter(Collision collision)
-    {
-        if(collision.collider.tag  == "enemy")
-        {
-            takeDamage(20f);
-        }
-    }
-    void takeDamage(float damage)
+    //void OnCollisionEnter(Collision collision)
+    //{
+        //if(collision.collider.tag  == "enemy")
+        //{
+            //takeDamage(15f);
+        //}
+   // }
+    public void takeDamage(float damage)
     {
         currentHealth -= damage;
         Bar.GetComponent<healthbar>().SetHealth(currentHealth);
