@@ -23,13 +23,14 @@ public class enemyAI : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(activecooldown);
+        //Debug.Log(activecooldown);
         activecooldown -= Time.deltaTime;
         agent.SetDestination(player.position);
         if (activecooldown <= 0f)
         {
+            Debug.Log(Vector3.Distance(transform.position, player.position));
             agent.isStopped = false;
-            if (Vector3.Distance(transform.position, player.position)<2f)
+            if (Vector3.Distance(transform.position, player.position)<3f)
             {
                 attack();
                 agent.isStopped = true;

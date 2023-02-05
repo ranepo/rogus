@@ -54,7 +54,7 @@ public class Scenes : MonoBehaviour
     }
     public void PlayGame()
     {
-        SceneManager.LoadScene("rogus");
+        SceneManager.LoadScene("Goblin Luola");
     }
     public void QuitGame()
     {
