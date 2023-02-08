@@ -118,6 +118,10 @@ MonoBehaviour:
   self: {fileID: 4521023560492485478}
   agent: {fileID: -548349332592603033}
   cooldown: 100
+  distance: 4
+  maxHealth: 100
+  basemat: {fileID: 2100000, guid: 5382d2f850cdeed4d8ffba2198f393bc, type: 2}
+  damagemat: {fileID: 2100000, guid: 5160d043387912b428d16fe10c1ba03a, type: 2}
 --- !u!54 &4521023560492485472
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -144,7 +148,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1
-  m_Speed: 6
+  m_Speed: 8
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

@@ -4,15 +4,38 @@ using UnityEngine;
 
 public class Battle : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // Update is called once per frame
+    public float damage = 20f;
+
+    public float cooldown = 1f;
+    float activecooldown;
+
     void Start()
     {
-        
+        activecooldown = cooldown;
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
+        activecooldown -= Time.deltaTime;
+        if (activecooldown <= 0f)
+            {
+                activecooldown = cooldown;
+                if (Input.GetMouseButton(0))
+                {
+                    RaycastHit hit;
+                    Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
+                    if (Physics.Raycast(ray, out hit, 100f))
+                    {
+                        if (hit.transform)
+                        {
+                            //Debug.Log(hit.transform.gameObject);
+                            if (hit.transform.gameObject.tag == "enemy")
+                            {
+                                hit.transform.gameObject.GetComponent<enemyAI>().takeDamage(damage);
+                            }
+                        }
+                    }
+                }
+            }
     }
 }
