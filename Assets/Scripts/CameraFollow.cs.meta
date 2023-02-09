@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/Scenes.cs.meta
+guid: 139a1933e22a1af4c93155b4f0dd6d44
+========
+guid: dd24240e1e15c8349b38967e750e4021
+>>>>>>>> test:Assets/Scripts/CameraFollow.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

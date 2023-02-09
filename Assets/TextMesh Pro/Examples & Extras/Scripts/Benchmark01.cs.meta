@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs.meta
+guid: f970ea55f9f84bf79b05dab180b8c125
+========
+guid: 1359f399cf439e1488503d92485ef3db
+>>>>>>>> test:Assets/Scripts/PlayerMovement.cs.meta
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
