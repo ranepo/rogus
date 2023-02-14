@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/rogus.unity
     guid: 5eec9a5683ee7c14faf83be355389484
+  - enabled: 1
+    path: Assets/Scenes/one.unity
+    guid: 9a18d45c8359c784b8e49ba6f5b94f5a
+  - enabled: 1
+    path: Assets/Scenes/Goblin Luola.unity
+    guid: 4c6c25d24d6db024d85db3a279a07b00
   m_configObjects: {}
