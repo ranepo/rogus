@@ -17,14 +17,14 @@ public class Battle : MonoBehaviour
     void Update()
     {
         activecooldown -= Time.deltaTime;
-        if (activecooldown <= 0f)
+        if (activecooldown <= 0f && Time.timeScale == 1f)
             {
-                activecooldown = cooldown;
                 if (Input.GetMouseButton(0))
                 {
-                    RaycastHit hit;
-                    Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
-                    if (Physics.Raycast(ray, out hit, 100f))
+                activecooldown = cooldown;
+                RaycastHit hit;
+                Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
+                    if (Physics.Raycast(ray, out hit, 3f))
                     {
                         if (hit.transform)
                         {

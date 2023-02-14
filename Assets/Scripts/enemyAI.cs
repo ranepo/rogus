@@ -60,6 +60,7 @@ public class enemyAI : MonoBehaviour
         Debug.Log(health);
         GetComponent<Renderer>().material = damagemat;
         activecooldown = cooldown;
+        agent.isStopped = true;
     }
 
 }
