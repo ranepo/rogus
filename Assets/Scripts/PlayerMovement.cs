@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     public float airMultiplier;
     bool readyToJump;
 
+    public float dashSpeed;
+
     [Header("Keybinds")]
     public KeyCode jumpKey = KeyCode.Space;
 
@@ -33,6 +35,8 @@ public class PlayerMovement : MonoBehaviour
     Vector3 moveDirection;
 
     Rigidbody rb;
+
+
 
 
     private void Start()
